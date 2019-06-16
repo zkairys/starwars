@@ -1,0 +1,29 @@
+{
+  "name": "starwars",
+  "version": "1.0.0",
+  "description": "web app from starwars api",
+  "main": "index.js",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^8.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkairys/starwars.git"
+  },
+  "author": "Zygimantas Kairys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zkairys/starwars/issues"
+  },
+  "homepage": "https://github.com/zkairys/starwars#readme"
+}
