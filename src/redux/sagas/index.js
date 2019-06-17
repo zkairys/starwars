@@ -5,7 +5,8 @@ import * as actions from "../actions";
 
 function* fetchInitialData() {
   const request = yield axios.get("https://swapi.co/api/people/");
-  yield put(actions.setCharacters(request.data));
+  console.log(request.data);
+  // yield put(actions.setCharacters(request.data));
 }
 
 function* StarWars() {

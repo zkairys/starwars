@@ -1,11 +1,18 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>zk</h1>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} />
+          {/* <Route path='/character/:character_name' component={Post} /> */}
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
