@@ -1,29 +1,32 @@
 {
-  "name": "starwars",
-  "version": "1.0.0",
-  "description": "web app from starwars api",
-  "main": "index.js",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "next": "^8.1.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zkairys/starwars.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "Zygimantas Kairys",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zkairys/starwars/issues"
-  },
-  "homepage": "https://github.com/zkairys/starwars#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
