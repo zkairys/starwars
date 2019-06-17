@@ -1,0 +1,2 @@
+export const INIT_CHARACTERS = "INIT_CHARACTERS";
+export const SET_CHARACTERS = "SET_CHARACTERS";
