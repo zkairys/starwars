@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import SingleCharacter from "./pages/SingleCharacter";
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} />
-          {/* <Route path='/character/:character_name' component={Post} /> */}
+          <Route path="/:character_name" component={SingleCharacter} />
         </Switch>
       </BrowserRouter>
     </div>

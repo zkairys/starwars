@@ -13,3 +13,10 @@ export const setCharacters = payload => {
     payload
   };
 };
+
+export const filterCharacters = payload => {
+  return {
+    type: actionTypes.FILTER_CHARACTERS,
+    payload
+  };
+};

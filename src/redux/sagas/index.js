@@ -1,17 +1,26 @@
 import { put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
-import { INIT_CHARACTERS } from "../types/";
+import { INIT_CHARACTERS, INIT_SINGLE_CHARACTER } from "../types/";
 import * as actions from "../actions";
 
-function* fetchPeopleData(payload) {
+function* fetchCharacterData(payload) {
   const request = yield axios.get(
     `https://swapi.co/api/people/?page=${payload.payload}`
   );
   yield put(actions.setCharacters(request.data));
 }
 
+function* fetchSingleCharacterData(payload) {
+  console.log(payload);
+  const request = yield axios.get(
+    `https://swapi.co/api/people/?search=${payload.payload}`
+  );
+  yield put(actions.setCharacters(request.data));
+}
+
 function* StarWars() {
-  yield takeLatest(INIT_CHARACTERS, fetchPeopleData);
+  yield takeLatest(INIT_CHARACTERS, fetchCharacterData);
+  yield takeLatest(INIT_SINGLE_CHARACTER, fetchSingleCharacterData);
 }
 
 export default StarWars;
