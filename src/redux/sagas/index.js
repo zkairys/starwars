@@ -4,8 +4,7 @@ import { INIT_CHARACTERS } from "../types/";
 import * as actions from "../actions";
 
 function* fetchPeopleData() {
-  const request = yield axios.get("https://swapi.co/api/people/?page=9");
-  console.log(request.data);
+  const request = yield axios.get("https://swapi.co/api/people/?page=8");
   yield put(actions.setCharacters(request.data));
 }
 

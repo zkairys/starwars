@@ -15,4 +15,20 @@
   @include min-screen(1440px) {
     width: 1174px;
   }
+
+  &--small {
+    max-width: 802px;
+
+    @include min-screen(768px) {
+      width: (428px/768px) * 100vw;
+    }
+
+    @include min-screen(1024px) {
+      width: (622px/1024px) * 100vw;
+    }
+
+    @include min-screen(1440px) {
+      width: 802px;
+    }
+  }
 }

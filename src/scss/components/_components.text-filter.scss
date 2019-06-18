@@ -1,0 +1,24 @@
+.text-filter {
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+
+  input {
+    border: none;
+    border-bottom: 3px solid $yeallow-brighter;
+    background-color: $white;
+    height: 60px;
+    font-size: 18px;
+    padding: 20px 0px 0px 20px;
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    bottom: 20px;
+    color: $yeallow-brighter;
+    font: 18px/24px $font-mali;
+    position: absolute;
+    left: 22px;
+  }
+}

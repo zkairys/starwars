@@ -1,21 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Header from "../components/Header/Header";
-import Characters from "../components/Characters";
+import Characters from "../components/Characters/Characters";
 import { initCharacters } from "../redux/actions";
 
-const Home = props => {
-  React.useEffect(() => {
-    props.initCharacters();
-  }, []);
+const Home = ({ initCharacters, characters }) => {
+  useEffect(() => {
+    initCharacters();
+  }, [initCharacters]);
 
   return (
-    <div className="inner">
+    <>
       <Header />
       <h1 className="">Home Page</h1>
-      <Characters />
-    </div>
+      <Characters characters={characters.characters} />
+    </>
   );
 };
 
