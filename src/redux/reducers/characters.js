@@ -14,7 +14,7 @@ const characters = (state = initialState, action) => {
       return {
         ...state,
         count: payload.count,
-        characters: payload.results,
+        characters: state.characters.concat(payload.results),
         nextPage: payload.next
       };
     default:

@@ -2,14 +2,22 @@ import React from "react";
 import Filter from "./Filter";
 import Grid from "./Grid";
 
-const Characters = ({ characters }) => {
+const Characters = ({ characters, nextPage, initCharacters }) => {
+  const loadMore = () => {
+    initCharacters(nextPage.charAt(nextPage.length - 1));
+  };
+
   return (
     <div className="characters">
       <Filter />
       <Grid characters={characters} />
-      <div className="flex-wrap">
-        <button className="btn btn--flex btn--custom">Load More</button>
-      </div>
+      {nextPage !== null && (
+        <div className="flex-wrap">
+          <button className="btn btn--flex btn--custom" onClick={loadMore}>
+            Load More
+          </button>
+        </div>
+      )}
     </div>
   );
 };

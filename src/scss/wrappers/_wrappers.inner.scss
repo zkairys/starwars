@@ -9,7 +9,7 @@
   }
 
   @include min-screen(1024px) {
-    width: (830px/1024px) * 100vw;
+    width: (900px/1024px) * 100vw;
   }
 
   @include min-screen(1440px) {

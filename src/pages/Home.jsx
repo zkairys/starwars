@@ -7,13 +7,17 @@ import { initCharacters } from "../redux/actions";
 
 const Home = ({ initCharacters, characters }) => {
   useEffect(() => {
-    initCharacters();
+    initCharacters("1");
   }, [initCharacters]);
 
   return (
     <>
       <Header />
-      <Characters characters={characters.characters} />
+      <Characters
+        characters={characters.characters}
+        nextPage={characters.nextPage}
+        initCharacters={initCharacters}
+      />
     </>
   );
 };

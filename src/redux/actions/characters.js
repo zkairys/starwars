@@ -1,8 +1,9 @@
 import * as actionTypes from "../types";
 
-export const initCharacters = () => {
+export const initCharacters = payload => {
   return {
-    type: actionTypes.INIT_CHARACTERS
+    type: actionTypes.INIT_CHARACTERS,
+    payload
   };
 };
 
