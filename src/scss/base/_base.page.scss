@@ -25,10 +25,19 @@ html {
 
 body {
   background-color: $white;
+  background-image: url("./assets/background.jpg");
   overflow-x: hidden;
   margin: 0;
   scroll-behavior: smooth;
   width: 100%;
+
+  &::before {
+    background: rgba(#636363, 0.3);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 audio,

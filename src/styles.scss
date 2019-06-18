@@ -1,14 +1,21 @@
 // global
+@import "./scss/global/global.fonts.scss";
 @import "./scss/global/global.variables.scss";
 
 // tools
 @import "./scss/tools/tools.media.scss";
+@import "./scss/tools/tools.mixins.scss";
+@import "./scss/tools/tools.animations.scss";
 
 // base styles
 @import "./scss/base/base.page.scss";
 
 // components
+@import "./scss/components/components.btn.scss";
 
-// sections
+// blocks
+@import "./scss/blocks/blocks.header.scss";
+@import "./scss/blocks/blocks.favourites.scss";
 
 // wrappers
+@import "./scss/wrappers/wrappers.inner.scss";
