@@ -13,10 +13,13 @@
 // components
 @import "./scss/components/components.btn.scss";
 @import "./scss/components/components.text-filter.scss";
+@import "./scss/components/components.star.scss";
 
 // blocks
 @import "./scss/blocks/blocks.header.scss";
 @import "./scss/blocks/blocks.favourites.scss";
+@import "./scss/blocks/blocks.grid.scss";
 
 // wrappers
 @import "./scss/wrappers/wrappers.inner.scss";
+@import "./scss/wrappers/wrappers.flex-wrap.scss";

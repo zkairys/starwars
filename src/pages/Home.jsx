@@ -13,7 +13,6 @@ const Home = ({ initCharacters, characters }) => {
   return (
     <>
       <Header />
-      <h1 className="">Home Page</h1>
       <Characters characters={characters.characters} />
     </>
   );
