@@ -1,6 +1,5 @@
 import React from "react";
-import { ReactComponent as Logo } from "../img/logo.svg";
-import { ReactComponent as HeaderSlack } from "../img/header-slash.svg";
+import Logo from "./../assets/logo.png";
 
 const Header = props => (
   <>
@@ -9,6 +8,7 @@ const Header = props => (
       <div className="favourites__sidebar">
         <div className="inner">
           <h1>Header</h1>
+          <img height="80px" src={Logo} alt="human" />
         </div>
       </div>
     </header>

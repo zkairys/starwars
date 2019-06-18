@@ -3,14 +3,14 @@ import axios from "axios";
 import { INIT_CHARACTERS } from "../types/";
 import * as actions from "../actions";
 
-function* fetchInitialData() {
-  const request = yield axios.get("https://swapi.co/api/people/");
+function* fetchPeopleData() {
+  const request = yield axios.get("https://swapi.co/api/people/?page=9");
   console.log(request.data);
-  // yield put(actions.setCharacters(request.data));
+  yield put(actions.setCharacters(request.data));
 }
 
 function* StarWars() {
-  yield takeLatest(INIT_CHARACTERS, fetchInitialData);
+  yield takeLatest(INIT_CHARACTERS, fetchPeopleData);
 }
 
 export default StarWars;
