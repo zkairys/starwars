@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-// import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Header from "../components/Header/Header";
 import Modal from "../components/Modal";
 import Characters from "../components/Characters/Characters";
-// import { initCharacters, filterCharacters } from "../redux/actions";
 import {
   INIT_CHARACTERS,
   FILTER_CHARACTERS,
-  ADD_FAVOURITES
+  ADD_FAVOURITES,
+  REMOVE_FAVOURITES,
+  TOGGLE_MODAL
 } from "../redux/types/";
 
 const Home = ({
@@ -17,7 +17,10 @@ const Home = ({
   filterCharacters,
   charactersFiltered,
   addFavourites,
-  favourites
+  favourites,
+  toggleModal,
+  modalOpen,
+  removeFavourites
 }) => {
   useEffect(() => {
     initCharacters("1");
@@ -25,8 +28,12 @@ const Home = ({
 
   return (
     <>
-      <Header />
-      <Modal favourites={favourites} />
+      <Header toggleModal={toggleModal} />
+      <Modal
+        favourites={favourites}
+        modalOpen={modalOpen}
+        removeFavourites={removeFavourites}
+      />
       <Characters
         characters={characters.characters}
         nextPage={characters.nextPage}
@@ -44,9 +51,10 @@ function mapDispatchToProps(dispatch) {
   return {
     initCharacters: payload => dispatch({ type: INIT_CHARACTERS, payload }),
     filterCharacters: payload => dispatch({ type: FILTER_CHARACTERS, payload }),
-    addFavourites: payload => dispatch({ type: ADD_FAVOURITES, payload })
+    addFavourites: payload => dispatch({ type: ADD_FAVOURITES, payload }),
+    removeFavourites: payload => dispatch({ type: REMOVE_FAVOURITES, payload }),
+    toggleModal: payload => dispatch({ type: TOGGLE_MODAL, payload })
   };
-  // bindActionCreators({ initCharacters, filterCharacters }, dispatch);
 }
 
 function mapStateToProps(state) {
@@ -54,7 +62,8 @@ function mapStateToProps(state) {
   return {
     characters: state.characters,
     charactersFiltered: state.characters.charactersFiltered,
-    favourites: state.favourites.favourites
+    favourites: state.favourites.favourites,
+    modalOpen: state.favourites.modalOpen
   };
 }
 

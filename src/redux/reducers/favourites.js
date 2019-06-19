@@ -1,7 +1,8 @@
 import * as actionTypes from "../types";
 
 const initialState = {
-  favourites: []
+  favourites: [],
+  modalOpen: false
 };
 
 const favourites = (state = initialState, action) => {
@@ -17,12 +18,17 @@ const favourites = (state = initialState, action) => {
           : state.favourites.concat(payload)
       };
     case actionTypes.REMOVE_FAVOURITES:
+      console.log(payload);
       return {
-        ...state
+        ...state,
+        favourites: state.favourites.filter(
+          favourite => favourite.name !== payload
+        )
       };
     case actionTypes.TOGGLE_MODAL:
       return {
-        ...state
+        ...state,
+        modalOpen: !state.modalOpen
       };
     default:
       return state;

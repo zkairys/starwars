@@ -34,6 +34,12 @@ const Character = ({ singleCharacter }) => {
                   <td>{singleCharacter.eye_color}</td>
                 </tr>
               )}
+              {singleCharacter.skin_color && (
+                <tr>
+                  <td>Skin Color: </td>
+                  <td>{singleCharacter.skin_color}</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

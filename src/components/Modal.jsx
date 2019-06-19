@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Modal = ({ item, addFavourites, favourites }) => {
+const Modal = ({ favourites, modalOpen, removeFavourites }) => {
   return (
     <div className="inner">
-      <div className="modal">
-        <div className="modal__header">Favourites</div>
+      <div className={`modal ${modalOpen && "modal--open"}`}>
+        <div className="modal__header">
+          {favourites.length > 0 ? "Favourites" : "Favourites Are Empty"}
+        </div>
         {favourites.length > 0 && (
           <>
             <div className="modal__favourites">
@@ -19,6 +21,7 @@ const Modal = ({ item, addFavourites, favourites }) => {
                       {favourite.name}
                     </Link>
                     <svg
+                      onClick={() => removeFavourites(favourite.name)}
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 26 26"
                       width="26"

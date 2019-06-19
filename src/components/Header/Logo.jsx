@@ -1,9 +1,9 @@
 import React from "react";
 import LogoImage from "./../../assets/logo.png";
 
-const Logo = ({ handleFavouritesOpen }) => (
+const Logo = ({ toggleModal }) => (
   <div className="header__button">
-    <button className="btn btn--wrapper" onClick={handleFavouritesOpen} />
+    <button className="btn btn--wrapper" onClick={toggleModal} />
     <img
       className="header__button__image"
       height="80px"

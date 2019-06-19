@@ -2,9 +2,9 @@ import React from "react";
 import Logo from "./Logo";
 import Favourites from "./Favourites";
 
-const Header = props => (
+const Header = ({ toggleModal }) => (
   <header className="header">
-    <Logo />
+    <Logo toggleModal={toggleModal} />
     <Favourites />
   </header>
 );
