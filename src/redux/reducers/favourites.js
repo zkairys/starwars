@@ -1,25 +1,18 @@
 import * as actionTypes from "../types";
 
 const initialState = {
-  count: null,
-  characters: [],
-  nextPage: null
+  favourites: []
 };
 
-const characters = (state = initialState, action) => {
+const favourites = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.SET_CHARACTERS:
-      console.log(action);
-      const { payload } = action;
+    case actionTypes.ADD_FAVOURITES:
       return {
-        ...state,
-        count: payload.count,
-        characters: state.characters.concat(payload.results),
-        nextPage: payload.next
+        ...state
       };
     default:
       return state;
   }
 };
 
-export default characters;
+export default favourites;
