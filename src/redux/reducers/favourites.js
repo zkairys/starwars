@@ -5,10 +5,15 @@ const initialState = {
 };
 
 const favourites = (state = initialState, action) => {
+  const { payload } = action;
   switch (action.type) {
     case actionTypes.ADD_FAVOURITES:
       return {
-        ...state
+        ...state,
+        favourites:
+          state.favourites.indexOf(payload) === -1
+            ? state.favourites.concat(payload)
+            : state.favourites
       };
     default:
       return state;

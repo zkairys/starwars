@@ -1,3 +1,3 @@
 export { initCharacters, setCharacters, filterCharacters } from "./characters";
 export { initSingleCharacter, setSingleCharacter } from "./singleCharacter";
-export { addFavaourites } from "./favaourites";
+export { addFavourites } from "./favaourites";

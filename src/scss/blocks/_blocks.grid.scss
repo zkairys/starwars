@@ -9,12 +9,12 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @include min-screen(768px) {
+  @include min-screen(960px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 60px 40px;
   }
 
-  @include min-screen(1024px) {
+  @include min-screen(1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 

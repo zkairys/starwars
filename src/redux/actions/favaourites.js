@@ -1,6 +1,6 @@
 import * as actionTypes from "../types";
 
-export const addFavaourites = payload => {
+export const addFavourites = payload => {
   return {
     type: actionTypes.ADD_FAVOURITES,
     payload

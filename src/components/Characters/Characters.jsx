@@ -7,12 +7,19 @@ const Characters = ({
   nextPage,
   initCharacters,
   filterCharacters,
-  charactersFiltered
+  charactersFiltered,
+  addFavourites,
+  favourites
 }) => {
   return (
     <div className="characters">
       <Filter characters={characters} filterCharacters={filterCharacters} />
-      <Grid characters={characters} charactersFiltered={charactersFiltered} />
+      <Grid
+        characters={characters}
+        charactersFiltered={charactersFiltered}
+        addFavourites={addFavourites}
+        favourites={favourites}
+      />
     </div>
   );
 };

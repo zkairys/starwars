@@ -2,7 +2,12 @@ import React from "react";
 import Star from "./../Star";
 import { Link } from "react-router-dom";
 
-const Grid = ({ characters, charactersFiltered }) => {
+const Grid = ({
+  characters,
+  charactersFiltered,
+  addFavourites,
+  favourites
+}) => {
   return (
     <div className="inner">
       {characters.length > 0 && (
@@ -11,7 +16,11 @@ const Grid = ({ characters, charactersFiltered }) => {
             <div key={index} className="grid__item">
               <div className="flex-wrap">
                 <h1 className="grid__item__heading">{item.name}</h1>
-                <Star />
+                <Star
+                  item={item}
+                  addFavourites={addFavourites}
+                  favourites={favourites}
+                />
               </div>
               {/* <button className="btn btn--flex">More Details</button> */}
               <Link className="btn btn--flex btn--link" to={`/${item.name}`}>

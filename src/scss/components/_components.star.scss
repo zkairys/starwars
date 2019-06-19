@@ -4,4 +4,9 @@
     margin-left: 15px;
     width: 25px;
   }
+  &--favourite {
+    svg {
+      fill: $yellow-brighter;
+    }
+  }
 }
