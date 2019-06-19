@@ -2,13 +2,26 @@ import rootReducer from "./redux/reducers/root";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import StarWars from "./redux/sagas/";
+import { save, load } from "redux-localstorage-simple";
 
 const initialState = {};
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
+// const store = createStore(
+//   rootReducer,
+//   initialState,
+//   compose(
+//     applyMiddleware(sagaMiddleware),
+//     save(),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   )
+// );
+
+const createStoreWithMiddleware = applyMiddleware(save())(createStore);
+
+const store = createStoreWithMiddleware(
   rootReducer,
-  initialState,
+  load(),
   compose(
     applyMiddleware(sagaMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

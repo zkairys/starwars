@@ -3,9 +3,10 @@ import React, { useEffect } from "react";
 const Star = ({ item, addFavourites, favourites }) => {
   return (
     <div
-      className={`star ${favourites.indexOf(item) !== -1 && "star--favourite"}`}
+      className={`star ${favourites.find(
+        favourite => favourite.name === item.name
+      ) && "star--favourite"}`}
     >
-      {console.log("Star", favourites.indexOf(item))}
       <svg
         onClick={() => addFavourites(item)}
         xmlns="http://www.w3.org/2000/svg"

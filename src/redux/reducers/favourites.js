@@ -10,10 +10,11 @@ const favourites = (state = initialState, action) => {
     case actionTypes.ADD_FAVOURITES:
       return {
         ...state,
-        favourites:
-          state.favourites.indexOf(payload) === -1
-            ? state.favourites.concat(payload)
-            : state.favourites
+        favourites: state.favourites.find(
+          favourite => favourite.name === payload.name
+        )
+          ? state.favourites
+          : state.favourites.concat(payload)
       };
     default:
       return state;
