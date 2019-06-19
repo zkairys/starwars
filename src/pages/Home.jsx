@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 // import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Header from "../components/Header/Header";
+import Modal from "../components/Modal";
 import Characters from "../components/Characters/Characters";
 // import { initCharacters, filterCharacters } from "../redux/actions";
 import {
@@ -25,6 +26,7 @@ const Home = ({
   return (
     <>
       <Header />
+      <Modal favourites={favourites} />
       <Characters
         characters={characters.characters}
         nextPage={characters.nextPage}

@@ -3,8 +3,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import StarWars from "./redux/sagas/";
 import { save, load } from "redux-localstorage-simple";
-
-const initialState = {};
 const sagaMiddleware = createSagaMiddleware();
 
 // const store = createStore(

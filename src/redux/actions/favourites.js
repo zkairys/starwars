@@ -6,3 +6,17 @@ export const addFavourites = payload => {
     payload
   };
 };
+
+export const removeFavourites = payload => {
+  return {
+    type: actionTypes.REMOVE_FAVOURITES,
+    payload
+  };
+};
+
+export const toggleModal = payload => {
+  return {
+    type: actionTypes.TOGGLE_MODAL,
+    payload
+  };
+};

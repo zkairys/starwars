@@ -1,0 +1,35 @@
+.modal {
+  align-items: center;
+  background-color: $white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  opacity: 0;
+  position: absolute;
+  &--open {
+    animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    position: relative;
+  }
+
+  &__header {
+    color: $yellow;
+    font: 20px/26px $font-mali;
+  }
+
+  &__favourites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px 50px;
+    margin-bottom: 50px;
+    margin-top: 60px;
+
+    &__item {
+      .btn {
+        border: none;
+        color: $yellow;
+      }
+    }
+  }
+}

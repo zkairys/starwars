@@ -16,6 +16,14 @@ const favourites = (state = initialState, action) => {
           ? state.favourites
           : state.favourites.concat(payload)
       };
+    case actionTypes.REMOVE_FAVOURITES:
+      return {
+        ...state
+      };
+    case actionTypes.TOGGLE_MODAL:
+      return {
+        ...state
+      };
     default:
       return state;
   }

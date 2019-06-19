@@ -17,7 +17,7 @@ const Home = ({
 
   return (
     <>
-      <Header />
+      <Header favourites={favourites} />
       <Character
         singleCharacter={singleCharacter}
         addFavourites={addFavourites}
