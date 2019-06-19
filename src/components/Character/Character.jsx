@@ -4,14 +4,10 @@ import Star from "./../Star";
 const Character = ({ singleCharacter }) => {
   return (
     <div className="inner">
-      {console.log("Character", singleCharacter)}
       {singleCharacter !== undefined && (
         <div className="character">
           {singleCharacter.name && (
-            <div className="flex-wrap">
-              <h1 className="character__heading">{singleCharacter.name}</h1>
-              <Star />
-            </div>
+            <h1 className="character__heading">{singleCharacter.name}</h1>
           )}
           <table>
             <tbody>

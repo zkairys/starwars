@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Header from "../components/Header/Header";
-import { INIT_SINGLE_CHARACTER } from "../redux/types/";
+import { INIT_SINGLE_CHARACTER, ADD_FAVOURITES } from "../redux/types/";
 import Character from "../components/Character/Character";
 
-const Home = ({ name, initCharacters, singleCharacter }) => {
+const Home = ({
+  name,
+  initCharacters,
+  singleCharacter,
+  addFavourites,
+  favourites
+}) => {
   useEffect(() => {
     initCharacters(name);
   }, [initCharacters, name]);
@@ -12,7 +18,11 @@ const Home = ({ name, initCharacters, singleCharacter }) => {
   return (
     <>
       <Header />
-      <Character singleCharacter={singleCharacter} />
+      <Character
+        singleCharacter={singleCharacter}
+        addFavourites={addFavourites}
+        favourites={favourites}
+      />
     </>
   );
 };
@@ -20,7 +30,8 @@ const Home = ({ name, initCharacters, singleCharacter }) => {
 function mapDispatchToProps(dispatch) {
   return {
     initCharacters: payload =>
-      dispatch({ type: INIT_SINGLE_CHARACTER, payload })
+      dispatch({ type: INIT_SINGLE_CHARACTER, payload }),
+    addFavourites: payload => dispatch({ type: ADD_FAVOURITES, payload })
   };
   // bindActionCreators({ initCharacters, filterCharacters }, dispatch);
 }
@@ -29,7 +40,8 @@ function mapStateToProps(state, ownProps) {
   console.log(state);
   return {
     name: ownProps.match.params.character_name,
-    singleCharacter: state.singleCharacter.singleCharacter[0]
+    singleCharacter: state.singleCharacter.singleCharacter[0],
+    favourites: state.favourites.favourites
   };
 }
 

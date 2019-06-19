@@ -5,6 +5,7 @@ const Star = ({ item, addFavourites, favourites }) => {
     <div
       className={`star ${favourites.indexOf(item) !== -1 && "star--favourite"}`}
     >
+      {console.log("Star", favourites.indexOf(item))}
       <svg
         onClick={() => addFavourites(item)}
         xmlns="http://www.w3.org/2000/svg"

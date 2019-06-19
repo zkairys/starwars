@@ -26,6 +26,7 @@
     width: 100%;
     -webkit-appearance: none;
     @include centre();
+    z-index: 999;
   }
 
   &--flex {

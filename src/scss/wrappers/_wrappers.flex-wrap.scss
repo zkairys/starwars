@@ -1,4 +1,8 @@
 .flex-wrap {
   display: flex;
   justify-content: center;
+
+  &--align {
+    align-items: center;
+  }
 }
