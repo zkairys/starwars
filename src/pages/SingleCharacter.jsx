@@ -7,7 +7,7 @@ import Character from "../components/Character/Character";
 const Home = ({ name, initCharacters, singleCharacter }) => {
   useEffect(() => {
     initCharacters(name);
-  }, [initCharacters]);
+  }, [initCharacters, name]);
 
   return (
     <>

@@ -14,9 +14,9 @@ const characters = (state = initialState, action) => {
       return {
         ...state,
         count: payload.count,
-        characters: state.characters.concat(payload.results),
+        characters: payload.results,
         nextPage: payload.next,
-        charactersFiltered: state.characters.concat(payload.results)
+        charactersFiltered: payload.results
       };
     case actionTypes.FILTER_CHARACTERS:
       console.log("FILTER_CHARACTERS", action);

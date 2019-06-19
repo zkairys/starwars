@@ -9,7 +9,7 @@ const Character = ({ singleCharacter }) => {
         <div className="character">
           {singleCharacter.name && (
             <div className="flex-wrap">
-              <h1 className="character__heading">singleCharacter.name}</h1>
+              <h1 className="character__heading">{singleCharacter.name}</h1>
               <Star />
             </div>
           )}
