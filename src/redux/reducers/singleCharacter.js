@@ -10,7 +10,7 @@ const singleCharacter = (state = initialState, action) => {
     case actionTypes.SET_SINGLE_CHARACTER:
       return {
         ...state,
-        singleCharacter: state.characters.concat(payload.results)
+        singleCharacter: payload.results
       };
     default:
       return state;

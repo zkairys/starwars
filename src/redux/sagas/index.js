@@ -11,11 +11,12 @@ function* fetchCharacterData(payload) {
 }
 
 function* fetchSingleCharacterData(payload) {
-  console.log(payload);
   const request = yield axios.get(
     `https://swapi.co/api/people/?search=${payload.payload}`
   );
-  yield put(actions.setCharacters(request.data));
+
+  console.log(request.data);
+  yield put(actions.setSingleCharacter(request.data));
 }
 
 function* StarWars() {
