@@ -19,7 +19,6 @@ const characters = (state = initialState, action) => {
         charactersFiltered: payload.results
       };
     case actionTypes.FILTER_CHARACTERS:
-      console.log("FILTER_CHARACTERS", action);
       return {
         ...state,
         charactersFiltered: payload

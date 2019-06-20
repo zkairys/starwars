@@ -58,7 +58,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     characters: state.characters,
     charactersFiltered: state.characters.charactersFiltered,

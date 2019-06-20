@@ -14,8 +14,6 @@ function* fetchSingleCharacterData(payload) {
   const request = yield axios.get(
     `https://swapi.co/api/people/?search=${payload.payload}`
   );
-
-  console.log(request.data);
   yield put(actions.setSingleCharacter(request.data));
 }
 

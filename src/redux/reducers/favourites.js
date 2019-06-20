@@ -18,7 +18,6 @@ const favourites = (state = initialState, action) => {
           : state.favourites.concat(payload)
       };
     case actionTypes.REMOVE_FAVOURITES:
-      console.log(payload);
       return {
         ...state,
         favourites: state.favourites.filter(

@@ -2,7 +2,6 @@ import React from "react";
 
 const Filter = ({ characters, filterCharacters }) => {
   const filterName = e => {
-    console.log(e.target.value);
     const newcharacters = characters.filter(
       character =>
         character.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !==
@@ -10,18 +9,6 @@ const Filter = ({ characters, filterCharacters }) => {
     );
 
     return filterCharacters(newcharacters, e.target.value);
-
-    // console.log(newcharacters);
-    // characters.filter(character => {
-    //   console.log(
-    //     character.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !==
-    //       -1
-    //   );
-    //   return (
-    //     character.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !==
-    //     -1
-    //   );
-    // });
   };
 
   return (

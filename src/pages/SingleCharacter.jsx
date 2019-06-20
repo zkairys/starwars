@@ -51,11 +51,9 @@ function mapDispatchToProps(dispatch) {
     removeFavourites: payload => dispatch({ type: REMOVE_FAVOURITES, payload }),
     toggleModal: payload => dispatch({ type: TOGGLE_MODAL, payload })
   };
-  // bindActionCreators({ initCharacters, filterCharacters }, dispatch);
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log(state);
   return {
     name: ownProps.match.params.character_name,
     singleCharacter: state.singleCharacter.singleCharacter[0],

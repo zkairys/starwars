@@ -6,16 +6,6 @@ import { save, load } from "redux-localstorage-simple";
 
 const sagaMiddleware = createSagaMiddleware();
 
-// const store = createStore(
-//   rootReducer,
-//   initialState,
-//   compose(
-//     applyMiddleware(sagaMiddleware),
-//     save(),
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-//   )
-// );
-
 const createStoreWithMiddleware = applyMiddleware(
   save({ states: ["favourites.favourites"] })
 )(createStore);
