@@ -1,7 +1,8 @@
 import React from "react";
 import Loader from "../Loader";
+import Star from "../Star";
 
-const Character = ({ singleCharacter, loading }) => {
+const Character = ({ singleCharacter, loading, addFavourites, favourites }) => {
   return (
     <div className="inner">
       {loading ? (
@@ -9,7 +10,14 @@ const Character = ({ singleCharacter, loading }) => {
       ) : (
         <div className="character">
           {singleCharacter.name && (
-            <h1 className="character__heading">{singleCharacter.name}</h1>
+            <div className="flex-wrap">
+              <h1 className="character__heading">{singleCharacter.name}</h1>
+              <Star
+                item={singleCharacter}
+                addFavourites={addFavourites}
+                favourites={favourites}
+              />
+            </div>
           )}
           <table>
             <tbody>
