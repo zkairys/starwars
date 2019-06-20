@@ -1,6 +1,7 @@
 import React from "react";
 import Filter from "./Filter";
 import Grid from "./Grid";
+import Loader from "../Loader";
 
 const Characters = ({
   characters,
@@ -14,12 +15,16 @@ const Characters = ({
   return (
     <div className="characters">
       <Filter characters={characters} filterCharacters={filterCharacters} />
-      <Grid
-        characters={characters}
-        charactersFiltered={charactersFiltered}
-        addFavourites={addFavourites}
-        favourites={favourites}
-      />
+      {charactersFiltered.length === 0 ? (
+        <Loader />
+      ) : (
+        <Grid
+          characters={characters}
+          charactersFiltered={charactersFiltered}
+          addFavourites={addFavourites}
+          favourites={favourites}
+        />
+      )}
     </div>
   );
 };

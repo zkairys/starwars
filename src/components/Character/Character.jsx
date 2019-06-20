@@ -1,9 +1,12 @@
 import React from "react";
+import Loader from "../Loader";
 
-const Character = ({ singleCharacter }) => {
+const Character = ({ singleCharacter, loading }) => {
   return (
     <div className="inner">
-      {singleCharacter !== undefined && (
+      {loading ? (
+        <Loader />
+      ) : (
         <div className="character">
           {singleCharacter.name && (
             <h1 className="character__heading">{singleCharacter.name}</h1>

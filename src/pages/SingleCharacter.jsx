@@ -18,7 +18,8 @@ const Home = ({
   favourites,
   modalOpen,
   removeFavourites,
-  toggleModal
+  toggleModal,
+  loading
 }) => {
   useEffect(() => {
     initCharacters(name);
@@ -36,6 +37,7 @@ const Home = ({
         singleCharacter={singleCharacter}
         addFavourites={addFavourites}
         favourites={favourites}
+        loading={loading}
       />
     </>
   );
@@ -57,6 +59,7 @@ function mapStateToProps(state, ownProps) {
   return {
     name: ownProps.match.params.character_name,
     singleCharacter: state.singleCharacter.singleCharacter[0],
+    loading: state.singleCharacter.loading,
     favourites: state.favourites.favourites,
     modalOpen: state.favourites.modalOpen
   };
